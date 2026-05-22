@@ -1,0 +1,26 @@
+groups:
+  - name: aiops-alerts
+
+    rules:
+
+      - alert: HighErrorRate
+        expr: app_errors_total > 5
+        for: 10s
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: "High error rate detected"
+          description: "Application error count exceeded threshold"
+
+      - alert: HighLatency
+        expr: app_request_latency_seconds_count > 5
+        for: 10s
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: "High latency detected"
+          description: "Latency threshold exceeded"
