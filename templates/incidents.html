@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Incidents</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>AI Ops</h2>
+
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+        <a href="/incidents-page" class="active">
+            Incidents
+        </a>
+
+        <a href="/analysis">
+            AI Analysis
+        </a>
+
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>Active Incidents</h1>
+
+                <p>
+                    Detected operational issues and recommendations
+                </p>
+
+            </div>
+
+        </div>
+
+
+        {% if incidents %}
+
+            {% for incident in incidents %}
+
+            <div class="logs-card">
+
+                <h3>{{ incident.type }}</h3>
+<div class="incident-header">
+
+    <h3>{{ incident.type }}</h3>
+
+    <span class="severity severity-{{ incident.severity.lower() }}">
+
+        {{ incident.severity }}
+
+    </span>
+
+</div>
+
+<p>
+
+    <strong>Priority:</strong>
+
+    {{ incident.priority }}
+
+</p>
+
+                <br>
+
+                <p>
+                    <b>Cause:</b>
+                    {{ incident.cause }}
+                </p>
+
+                <br>
+
+                <p>
+                    <b>Solution:</b>
+                    {{ incident.solution }}
+                </p>
+
+                <br>
+
+                <p>
+                    <b>Priority:</b>
+                    {{ incident.priority }}
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="logs-card">
+
+                <h3>✅ No Active Incidents</h3>
+
+                <p>
+                    System is currently operating within normal limits.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

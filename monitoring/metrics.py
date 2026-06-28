@@ -1,6 +1,7 @@
 from prometheus_client import Counter, Histogram
 from functools import wraps
 import time
+import requests
 
 # ----------------------------
 # PROMETHEUS METRICS
@@ -72,24 +73,27 @@ def track_request(func):
 # DASHBOARD METRICS
 # ----------------------------
 
+
 def get_metrics():
 
-    avg_latency = 0
+    try:
 
-    if response_times:
-        avg_latency = sum(response_times) / len(response_times)
+        response = requests.get(
+            "http://127.0.0.1:5000/metrics-api"
+        )
 
-    uptime = 100
+        return response.json()
 
-    if request_count > 0:
-        uptime = (
-            (request_count - error_count)
-            / request_count
-        ) * 100
+    except Exception as e:
 
-    return {
-        "requests": request_count,
-        "errors": error_count,
-        "avg_latency": round(avg_latency, 2),
-        "uptime": round(uptime, 2)
-    }
+        print("METRICS ERROR:", e)
+
+        return {
+
+            "requests": 0,
+            "errors": 0,
+            "avg_latency": 0,
+            "uptime": 100,
+            "latency_data": []
+
+        }

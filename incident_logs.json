@@ -436,5 +436,167 @@
         "type": "High Latency",
         "severity": "High",
         "value": "1913.92 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:10",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.62 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:10",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.53%"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:18",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.62 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:18",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.53%"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:53",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.62 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:40:53",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.53%"
+    },
+    {
+        "timestamp": "2026-06-25 12:50:50",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.33 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:50:50",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "66.67%"
+    },
+    {
+        "timestamp": "2026-06-25 12:50:52",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.33 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:50:52",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "66.67%"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:15",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.40 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:15",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "60.00%"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:24",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.40 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:24",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "60.00%"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:28",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1500.40 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:51:28",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "60.00%"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:38",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1621.08 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:38",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.00%"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:40",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1621.08 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:40",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.00%"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:51",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1621.08 ms"
+    },
+    {
+        "timestamp": "2026-06-25 12:57:51",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "25.00%"
+    },
+    {
+        "timestamp": "2026-06-25 13:01:19",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1086.69 ms"
+    },
+    {
+        "timestamp": "2026-06-25 13:01:19",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "60.00%"
+    },
+    {
+        "timestamp": "2026-06-25 13:01:21",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1086.69 ms"
+    },
+    {
+        "timestamp": "2026-06-25 13:01:21",
+        "type": "High Error Rate",
+        "severity": "Critical",
+        "value": "60.00%"
+    },
+    {
+        "timestamp": "2026-06-27 22:43:31",
+        "type": "High Latency",
+        "severity": "High",
+        "value": "1271.11 ms"
     }
 ]

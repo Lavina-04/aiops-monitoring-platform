@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>AI Ops</h2>
+
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+        <a href="/incidents-page">
+            Incidents
+        </a>
+
+        <a href="/analysis" class="active">
+            AI Analysis
+        </a>
+
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>AI Operational Analysis</h1>
+
+                <p>
+                    Root cause analysis and operational recommendations
+                </p>
+
+            </div>
+
+        </div>
+
+
+        {% if incidents %}
+
+            {% for incident in incidents %}
+
+            <div class="logs-card">
+
+                <h3>{{ incident.type }}</h3>
+
+                <br>
+
+                <h4>Root Cause</h4>
+
+                <p>
+                    {{ incident.cause }}
+                </p>
+
+                <br>
+
+                <h4>Recommended Actions</h4>
+
+                 <ul>
+
+                   {% for action in incident.solution %}
+
+                     <li>{{ action }}</li>
+
+                     {% endfor %}
+
+                </ul>
+
+                <br>
+
+                <h4>Knowledge Base</h4>
+
+                <ul>
+
+                    {% for item in incident.knowledge %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="logs-card">
+
+                <h3>AI Summary</h3>
+
+                <p>
+                    No anomalies detected.
+                    The system is operating within expected thresholds.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

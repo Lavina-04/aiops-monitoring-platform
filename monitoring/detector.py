@@ -3,11 +3,7 @@ from ai_assistant.rag_engine import (
     calculate_anomaly_score
 )
 
-from monitoring.metrics import (
-    request_count,
-    error_count,
-    response_times
-)
+import monitoring.metrics as metrics
 
 from logs.logger import log_incident
 
@@ -58,18 +54,24 @@ def safe_analyze_incident(issue_type):
 # INCIDENT DETECTION ENGINE
 # ----------------------------
 def detect_incidents():
+    print("\n========== DETECTOR ==========")
+    print("REQUESTS:", metrics.request_count)
+    print("ERRORS:", metrics.error_count)
+    print("LATENCIES:", len(metrics.response_times))
 
     incidents = []
 
     # ----------------------------
     # HIGH LATENCY DETECTION
     # ----------------------------
-    if response_times and len(response_times) > 0:
+    if metrics.response_times and len(metrics.response_times) > 0:
 
         avg_latency = (
-            sum(response_times)
-            / len(response_times)
+            sum(metrics.response_times)
+            / len(metrics.response_times)
         )
+         
+        print("AVG LATENCY:", avg_latency)
 
         if avg_latency > 1000:
 
@@ -112,11 +114,13 @@ def detect_incidents():
     # ----------------------------
     # HIGH ERROR RATE DETECTION
     # ----------------------------
-    if request_count > 0:
+    if metrics.request_count > 0:
 
         error_rate = (
-            error_count / request_count
+            metrics.error_count / metrics.request_count
         ) * 100
+        print("REQUEST COUNT:", metrics.request_count)
+        print("ERROR COUNT:", metrics.error_count)
 
         if error_rate > 20:
 

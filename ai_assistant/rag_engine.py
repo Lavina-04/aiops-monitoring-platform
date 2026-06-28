@@ -173,3 +173,43 @@ def calculate_anomaly_score(value):
             "System operating normally"
         ]
     }
+def generate_ai_summary(metrics):
+
+    insights = []
+
+    # High Latency
+    if metrics["avg_latency"] > 200:
+
+        insights.append(
+            "AI detected higher than normal response times. Database queries or backend processing may require optimization."
+        )
+
+    # Error Detection
+    if metrics["errors"] > 0:
+
+        insights.append(
+            "Application errors were detected. Review server logs and dependency health."
+        )
+
+    # Traffic Analysis
+    if metrics["requests"] >= 10:
+
+        insights.append(
+            "User activity is increasing. Monitor system resources and scalability requirements."
+        )
+
+    # Uptime Analysis
+    if metrics["uptime"] < 95:
+
+        insights.append(
+            "System uptime has degraded below recommended thresholds."
+        )
+
+    # Healthy System
+    if not insights:
+
+        insights.append(
+            "AI analysis indicates that the platform is operating normally."
+        )
+
+    return insights
